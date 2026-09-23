@@ -113,7 +113,7 @@
     "discountPct": 15,
     "price": 400,
     "shortDesc": null,
-    "image": null,
+    "image": "../assets/img/corsa-smf-2101.jpg",
     "dimensions": "MANUAL / NOT SPECIFIED",
     "weight": "MANUAL / NOT SPECIFIED",
     "packDimensions": "MANUAL / NOT SPECIFIED",

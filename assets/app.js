@@ -46,6 +46,38 @@
     burger.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
+  /* ------------------------------------------------ header fit guard
+     The CSS breakpoint assumes the authored font metrics. Real browsers can
+     render the row wider (Windows font rasterising, zoom, display scaling), so
+     measure it: if the desktop row does not fit, collapse to the MENU button
+     exactly as the narrow-viewport layout does. */
+  (function () {
+    var root = document.documentElement;
+    var bar = $('.header-bar');
+    var navEl = $('.nav');
+    var acts = $('.header-actions');
+    if (!bar || !navEl || !acts) return;
+    function fits() {
+      root.classList.remove('header-compact');
+      if (getComputedStyle(acts).display === 'none') return true;   // media query already collapsed it
+      var b = bar.getBoundingClientRect();
+      var pad = parseFloat(getComputedStyle(bar).paddingRight) || 0;
+      var brand = $('.brand', bar);
+      var n = navEl.getBoundingClientRect();
+      var ar = acts.getBoundingClientRect();
+      var overflowRight = ar.right > b.right - pad + 1;
+      var overlapBrand = brand && n.left < brand.getBoundingClientRect().right;
+      var overlapNav = ar.left < n.right - 1;
+      return !(overflowRight || overlapBrand || overlapNav || bar.scrollWidth > bar.clientWidth + 1);
+    }
+    function check() { if (!fits()) root.classList.add('header-compact'); }
+    check();
+    var t;
+    window.addEventListener('resize', function () { clearTimeout(t); t = setTimeout(check, 60); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(check);
+    window.addEventListener('load', check);
+  })();
+
   /* --------------------------------------------------------- search overlay */
   var searchOverlay = $('#search-overlay');
   var searchInput = $('#search-input');

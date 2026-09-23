@@ -173,6 +173,12 @@ a.link-cta[download]:hover{color:var(--mango-ink-hi);transform:translateY(-1px)}
   .nav,.header-actions{display:none}
   .header-mobile{display:flex}
 }
+/* Same collapse, triggered by measurement instead of width. app.js adds
+   .header-compact whenever the full row would not fit inside .header-bar
+   (wider font rendering, browser zoom, OS display scaling), so Shop Now and
+   WhatsApp can never be clipped at any viewport. */
+.header-compact .nav,.header-compact .header-actions{display:none}
+.header-compact .header-mobile{display:flex}
 
 /* --- hero ----------------------------------------------------------------- */
 .hero{background:var(--grey);color:var(--bg);padding:104px 24px 88px;position:relative;overflow:hidden}
