@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /shop/admin/
+
+Sitemap: https://khalifaindia.com/sitemap.xml
