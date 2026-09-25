@@ -183,7 +183,7 @@ a.link-cta[download]:hover{color:var(--mango-ink-hi);transform:translateY(-1px)}
 /* --- hero ----------------------------------------------------------------- */
 .hero{background:var(--grey);color:var(--bg);padding:104px 24px 88px;position:relative;overflow:hidden}
 .hero-photo{position:absolute;inset:0;background-image:url(img/hero.jpg);background-size:cover;background-position:center;background-repeat:no-repeat;opacity:.55;pointer-events:none}
-.hero-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(62,68,75,.94) 0%,rgba(62,68,75,.86) 52%,rgba(62,68,75,.62) 100%);pointer-events:none}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(62,68,75,.75) 0%,rgba(62,68,75,.69) 52%,rgba(62,68,75,.5) 100%);pointer-events:none}
 .hero-grid-lines{position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.05) 0 1px,transparent 1px 86px);pointer-events:none}
 .hero-ring{position:absolute;right:-6%;top:-14%;width:520px;height:520px;border:1px solid rgba(255,255,255,.07);border-radius:50%;pointer-events:none}
 .hero-inner{max-width:var(--shell);margin:0 auto;position:relative}
@@ -623,7 +623,7 @@ body{overflow-wrap:break-word}
 
 /* 9. Keep the hero legible where the scrim is thinnest on narrow screens. */
 @media(max-width:700px){
-  .hero-scrim{background:linear-gradient(180deg,rgba(62,68,75,.9) 0%,rgba(62,68,75,.95) 100%)}
+  .hero-scrim{background:linear-gradient(180deg,rgba(62,68,75,.72) 0%,rgba(62,68,75,.76) 100%)}
 }
 
 /* 10. Reduce motion for users who ask, and avoid sticky quirks on short
@@ -684,6 +684,8 @@ body{overflow-wrap:break-word}
 .shop-card-cta{margin-top:auto;padding-top:14px;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mango-ink);display:inline-flex;align-items:center;gap:7px}
 .shop-card-cta span{transition:transform .2s cubic-bezier(.22,.8,.3,1)}
 .shop-card:hover .shop-card-cta span{transform:translateX(4px)}
+.shop-card-btn{padding:13px 18px;min-height:44px;border-radius:2px;border:1px solid var(--mango);background:var(--mango);color:var(--ink);transition:transform .18s cubic-bezier(.22,.8,.3,1),box-shadow .18s cubic-bezier(.22,.8,.3,1),background-color .18s ease,border-color .18s ease}
+.shop-card:hover .shop-card-btn,.shop-card-btn:hover{background:var(--mango-hi);border-color:var(--mango-hi);box-shadow:0 14px 26px -14px rgba(20,22,26,.5),0 2px 6px rgba(20,22,26,.14)}
 
 .shop-empty{margin-top:28px;border:1px dashed #C9C4BC;border-radius:8px;background:var(--white);padding:clamp(26px,4vw,44px)}
 
